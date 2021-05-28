@@ -27,9 +27,9 @@ DEBUG = int(os.environ.get("DEBUG", default=True))
 ALLOWED_HOSTS = ["localhost", "nameless-sierra-69417.herokuapp.com"]
 
 DOMAIN = (
-    "https://nameless-sierra-69417.herokuapp.com/"
+    "https://nameless-sierra-69417.herokuapp.com"
     if os.environ.get("DEBUG") and int(os.environ.get("DEBUG")) == 0
-    else "http://localhost:8000/"
+    else "http://localhost:8000"
 )
 # Application definition
 

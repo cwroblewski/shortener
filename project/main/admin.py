@@ -5,6 +5,7 @@ from .models import Url
 
 @admin.register(Url)
 class UrlAdmin(admin.ModelAdmin):
+    list_display = ("origin_url", "shortened_url")
     readonly_fields = ("origin_url", "shortened_url")
 
     def has_add_permission(self, request):

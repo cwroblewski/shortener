@@ -12,6 +12,13 @@ services:
       - "8000:8000"
     depends_on:
       - db
+  migrate:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile-Dev
+    command: python manage.py migrate
+    depends_on:
+      - web
   db:
     image: postgres:12-alpine
     ports:

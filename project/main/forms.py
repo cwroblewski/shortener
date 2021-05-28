@@ -13,7 +13,12 @@ class UrlShortenerForm(forms.ModelForm):
         cleaned_data = super().clean()
         validate = URLValidator()
         try:
-            validate(cleaned_data["origin_url"])
+            validate(
+                cleaned_data["origin_url"],
+            )
         except Exception:
-            self.add_error("origin_url", "This is not correct URL.")
+            self.add_error(
+                "origin_url",
+                "This is not correct URL. Check format, example: 'http://nameless-sierra-69417.herokuapp.com/'",
+            )
         return cleaned_data

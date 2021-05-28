@@ -26,7 +26,11 @@ DEBUG = int(os.environ.get("DEBUG", default=True))
 
 ALLOWED_HOSTS = ["localhost", "nameless-sierra-69417.herokuapp.com"]
 
-
+DOMAIN = (
+    "https://nameless-sierra-69417.herokuapp.com/"
+    if os.environ.get("DEBUG") and int(os.environ.get("DEBUG")) == 0
+    else "http://localhost:8000/"
+)
 # Application definition
 
 INSTALLED_APPS = [
@@ -113,9 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "pl"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = "Europe/Warsaw"
 
 USE_I18N = True
 

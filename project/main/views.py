@@ -1,6 +1,8 @@
 from django.shortcuts import redirect, render
 from django.views import View
 
+from project import settings
+
 from .forms import UrlShortenerForm
 from .models import Url
 
@@ -16,7 +18,7 @@ class UrlShortener(View):
 
         if form.is_valid():
             instance = form.save(commit=False)
-            instance.shortened_url = f"{request.META['HTTP_HOST']}/{instance.uuid}"
+            instance.shortened_url = f"{settings.DOMAIN}/{instance.uuid}"
             instance.save()
 
             return render(

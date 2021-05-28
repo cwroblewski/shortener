@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Url Shortener</title>
+</head>
+<body>
+{% block container %}
+    {% if form.origin_url %}
+        <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="origin_url">Podaj Url do skrócenia</label>
+            {{ form.origin_url }}
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    {% else %}
+
+        <div> Orginalny url: {{ origin_url }}</div>
+        <div> Skrócony url: <a href={{ origin_url }}>{{ shortened_url }}</a></div>
+
+    {% endif %}
+</form>
+
+{% endblock %}
+</body>
+</html>

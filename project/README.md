@@ -8,4 +8,4 @@ requirements:
 
 * open terminal 
 * clone this repository to an empty directory
-* go to dir /shortener/project and type "docker-compose up" - Now app is running locally
+* go to dir /shortener/project and type "docker-compose up" - Now app is running locally on localhost:8000

@@ -14,6 +14,15 @@
             {{ form.origin_url }}
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
+        {% if form.errors %}
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <div>
+                        <strong>{{ error }}</strong>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
     {% else %}
 
         <div> Orginalny url: {{ origin_url }}</div>

@@ -4,3 +4,6 @@ markdown
 dj_database_url
 requests
 gunicorn
+whitenoise==5.2.0
+black
+isort

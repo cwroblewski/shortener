@@ -3,3 +3,4 @@ markdown
 requests
 gunicorn
 dj-database-url
+whitenoise==5.2.0

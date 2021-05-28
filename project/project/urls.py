@@ -1,16 +1,10 @@
 from django.contrib import admin
-from django.urls import (
-    path,
-    re_path
-)
+from django.urls import path
 
-from main.views import (
-    UrlShortener,
-    OriginUrlView
-)
+from main.views import OriginUrlView, UrlShortener
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', UrlShortener.as_view()),
-    re_path('(?P<url_id>(\d)+)/', OriginUrlView.as_view())
+    path("admin/", admin.site.urls),
+    path("", UrlShortener.as_view()),
+    path("<int:url_id>/", OriginUrlView.as_view()),
 ]

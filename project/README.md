@@ -5,5 +5,7 @@ SETUP:
 requirements:
 *Docker, docker-compose
 
+
+* open terminal 
 * clone this repository to an empty directory
-* after it is built type "docker-compose up" - Now app is running locally
+* go to dir /shortener/project and type "docker-compose up" - Now app is running locally

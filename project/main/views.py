@@ -17,9 +17,7 @@ class UrlShortener(View):
         form = UrlShortenerForm(request.POST)
 
         if form.is_valid():
-            instance = form.save(commit=False)
-            instance.shortened_url = f"{settings.DOMAIN}/{instance.uuid}"
-            instance.save()
+            instance = form.save()
 
             return render(
                 request,
@@ -35,4 +33,4 @@ class UrlShortener(View):
 
 class OriginUrlView(View):
     def get(self, request, **kwargs):
-        return redirect(f"{Url.objects.get(id=kwargs['url_id']).origin_url}")
+        return redirect(f"{Url.objects.get(uuid=kwargs['uuid']).origin_url}")

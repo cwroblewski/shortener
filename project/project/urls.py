@@ -6,5 +6,5 @@ from main.views import OriginUrlView, UrlShortener
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", UrlShortener.as_view()),
-    path("<int:url_id>/", OriginUrlView.as_view()),
+    path("<uuid:uuid>/", OriginUrlView.as_view()),
 ]
